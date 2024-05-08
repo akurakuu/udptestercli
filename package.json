@@ -12,5 +12,6 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc && node ."
-  }
+  },
+  "license": "MIT"
 }
