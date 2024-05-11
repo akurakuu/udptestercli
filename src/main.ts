@@ -3,11 +3,9 @@ import { createInterface, clearLine, clearScreenDown } from "readline";
 import dotenv from "dotenv";
 dotenv.config();
 
-const TARGET_PORT = Number(process.env.TARGET_PORT) || 3000;
 const CLIENT_PORT = Number(process.env.CLIENT_PORT) || 3001;
+const TARGET_PORT = Number(process.env.TARGET_PORT) || 3000;
 const TARGET_HOST = process.env.TARGET_HOST || "localhost";
-
-console.log(process.env.TARGET_PORT);
 
 console.log("UDP client");
 
