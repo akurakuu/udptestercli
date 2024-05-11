@@ -1,12 +1,19 @@
 # udptestercli
+Set Environment Variables:
 
-To install dependencies:
+```env
+CLIENT_PORT=39393
+TARGET_PORT=39392
+TARGET_HOST=localhost
+```
+
+Install dependencies:
 
 ```bash
 bun install
 ```
 
-To run:
+Run:
 
 ```bash
 bun run start
