@@ -2,7 +2,7 @@
 Set Environment Variables:
 
 ```env
-CLIENT_PORT=39393
+LISTEN_PORT=39393
 TARGET_PORT=39392
 TARGET_HOST=localhost
 ```

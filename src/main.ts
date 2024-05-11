@@ -3,7 +3,7 @@ import { createInterface, clearLine, clearScreenDown } from "readline";
 import dotenv from "dotenv";
 dotenv.config();
 
-const CLIENT_PORT = Number(process.env.CLIENT_PORT) || 3001;
+const LISTEN_PORT = Number(process.env.LISTEN_PORT) || 3001;
 const TARGET_PORT = Number(process.env.TARGET_PORT) || 3000;
 const TARGET_HOST = process.env.TARGET_HOST || "localhost";
 
@@ -22,10 +22,10 @@ socket.on("message", (msg, rinfo) => {
         process.stdout.clearLine(0);
         process.stdout.cursorTo(0);
     }
-    console.log(`server: ${msg}`);
+    console.log(`[${rinfo.address}:${rinfo.port}] ${msg}`);
     askForInput();
 });
-socket.bind(CLIENT_PORT);
+socket.bind(LISTEN_PORT);
 
 
 function askForInput() {
@@ -35,7 +35,7 @@ function askForInput() {
         process.stdout.moveCursor(0, -1);
         process.stdout.clearLine(0);
         process.stdout.cursorTo(0);
-        console.log(`message: ${answer}`);
+        console.log(`[${TARGET_HOST}:${TARGET_PORT}] ${answer}`);
         socket.send(answer, TARGET_PORT, TARGET_HOST, (err) => {
             if (err) {
                 console.error(err);
